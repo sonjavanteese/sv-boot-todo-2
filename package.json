@@ -12,6 +12,7 @@
     "@popperjs/core": "^2.11.5",
     "@sveltejs/vite-plugin-svelte": "^1.1.0",
     "bootstrap": "^5.2.0",
+    "renderless-svelte": "^1.7.0",
     "sass": "^1.53.0",
     "svelte": "^3.52.0",
     "svelte-preprocess": "^4.10.7",

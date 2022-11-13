@@ -1,8 +1,12 @@
 <script>
-  export let name = "App-Settings";
+  import SetForm from "./_comp/SetForm.svelte";
+  export let name = "Einstellungen";
 </script>
+
 <div class="container-xl py-4">
-  <h2>
+  <h4>
     {name}
-  </h2>
+  </h4>
+  <hr />
+  <SetForm />
 </div>

@@ -1,6 +1,5 @@
 <script>
   import { _user } from "../lib/data";
-  import Profil from "./_comp/Profil.svelte";
   export let titel = "Nwp-Studio";
   export let sub = "Application";
   export let bg =
@@ -24,16 +23,18 @@
           >
         </div>
         <div>
-          <a class="btn btn-link btn-lg" href="/user" role="button">User Panel</a>
+          <a class="btn btn-link btn-lg" href="/user" role="button"
+            >User Panel</a
+          >
         </div>
       {:else}
         <div>
-          <a class="btn btn-dark btn-lg" href="/login" role="button">Anmelden</a>
+          <a class="btn btn-dark btn-lg" href="/login" role="button">Anmelden</a
+          >
         </div>
       {/if}
     </div>
   </header>
-
 </section>
 
 <style>

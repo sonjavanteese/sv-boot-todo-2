@@ -10,7 +10,6 @@
   import SettingsPage from "./routes/SettingsPage.svelte";
   import UserPage from "./routes/UserPage.svelte";
   import SignIn from "./lib/components/SignIn.svelte";
-  import Header from "./lib/components/Header.svelte";
   import EditPage from "./routes/EditPage.svelte";
   import Page from "./lib/components/Page.svelte";
   import { onMount } from "svelte";
@@ -18,7 +17,6 @@
   router.mode.hash();
 
   const changeAuth = async (user = null, delay = 1000) => {
-    // console.log("changeAuth to ", user ? true : false);
     await sleep(delay);
     if (user) {
       _user.set(user);
@@ -48,38 +46,27 @@
 <Transition>
   <Route path="/">
     <Page>
-      <!-- <Header page={pageData[0]}>
-      <div>
-        <a class="btn btn-primary" href="/data" role="button">Application</a>
-      </div>
-      </Header> -->
       <StartPage {...pageData[0]} />
     </Page>
   </Route>
   {#if $_user}
     <Route path="/data">
       <Page>
-        <Header {...pageData[1]} />
         <DataPage />
       </Page>
     </Route>
     <Route path="/settings">
       <Page>
-        <Header {...pageData[2]} />
         <SettingsPage />
       </Page>
     </Route>
     <Route path="/user">
       <Page>
-        <Header {...pageData[3]} />
-        <hr class="my-0" />
         <UserPage />
       </Page>
     </Route>
     <Route path="/edit">
       <Page>
-        <Header {...pageData[4]} />
-        <hr class="my-0" />
         <EditPage />
       </Page>
     </Route>
@@ -108,6 +95,3 @@
 </Transition>
 
 <Iconlib />
-
-<style>
-</style>

@@ -1,8 +1,14 @@
 <script>
   import { _user, supabase, sleep } from "../data";
-  let email, password, loading;
-  let header = "Einloggen";
-  let label = "Login";
+  let email = "",
+    password = "",
+    loading = false,
+    header = "Einloggen",
+    label = "Login";
+  const resetForm = async () => {
+    email = "";
+    password = "";
+  };
   const signIn = async () => {
     loading = true;
     try {
@@ -15,11 +21,11 @@
       alert("Error Login!");
     } finally {
       await sleep(800);
+      await resetForm();
       loading = false;
     }
   };
 </script>
-
 
 <section {...$$restProps}>
   <form class="form-signin text-center" on:submit|preventDefault={signIn}>
@@ -59,14 +65,16 @@
       required=""
     />
     <div class="mb-3" />
-    <button class="w-100 btn btn-lg btn-primary" type="submit"
+    <button
+      class="w-100 btn btn-lg btn-primary"
+      type="submit"
+      disabled={email === "" || password === ""}
       >{!loading ? label : "...loading"}</button
     >
-    <button class="w-100 btn btn-link" type="reset"
-      >Clear</button
-    >
-    <p class="mt-3 mb-3">©nwp-studio <a href="/signup" class="text-center">Anmelden</a></p>
-    
+    <button on:click={resetForm} class="w-100 btn btn-link" type="reset">Clear</button>
+    <p class="mt-3 mb-3">
+      ©nwp-studio <a href="/signup" class="text-center">Anmelden</a>
+    </p>
   </form>
 </section>
 
@@ -74,5 +82,4 @@
   section {
     width: 100%;
   }
-
 </style>
