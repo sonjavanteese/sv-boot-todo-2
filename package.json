@@ -1,0 +1,36 @@
+{
+  "name": "test-sv-boot-todo-2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@popperjs/core": "^2.11.5",
+    "@sveltejs/vite-plugin-svelte": "^1.1.0",
+    "bootstrap": "^5.2.0",
+    "sass": "^1.53.0",
+    "svelte": "^3.52.0",
+    "svelte-preprocess": "^4.10.7",
+    "tinro": "^0.6.12",
+    "vite": "^3.2.3"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.1.0"
+  },
+  "description": "This template should help get you started developing with Svelte in Vite.",
+  "main": "svelte.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonjavanteese/sv-boot-todo-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sonjavanteese/sv-boot-todo-2/issues"
+  },
+  "homepage": "https://github.com/sonjavanteese/sv-boot-todo-2#readme"
+}
