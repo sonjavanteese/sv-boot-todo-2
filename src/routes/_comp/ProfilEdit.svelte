@@ -57,10 +57,11 @@
   }
 </script>
 
+<section {...$$restProps}>
 {#await promise}
   <Loader />
 {:then data}
-  <div>
+  <div class="text-center">
     <img
       src={img_url
         ? img_url
@@ -152,3 +153,4 @@
     </form>
   {/each}
 {/await}
+</section>
