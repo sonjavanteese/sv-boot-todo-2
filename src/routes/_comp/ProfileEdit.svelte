@@ -1,7 +1,6 @@
 <script>
   import Loader from "../../lib/data/comp/Loader.svelte";
   import { _user, supabase, sleep, _settings } from "../../lib/data";
-  export let img;
   let loading;
   let promise;
   let username, website, img_url, location;
@@ -29,6 +28,22 @@
       }
     } finally {
       loading = false;
+    }
+  };
+  const generateProfil = async () => {
+    console.log("generateProfil");
+    try {
+      loading = true;
+      let uid = $_user.id;
+      const { data, error } = await supabase
+        .from("profiles")
+        .insert([{ id: uid, username: "New User" }]);
+      if (error) throw error;
+    } catch (error) {
+      alert(error.message);
+    } finally {
+      loading = false;
+      promise = getProfil($_user.id);
     }
   };
   const getProfil = async (id) => {

@@ -1,6 +1,5 @@
 <script>
   import { _user, _settings, supabase, sleep } from "../../lib/data";
-  import { slide } from "svelte/transition";
   export let reload;
   export let open;
   let newTask = "";
@@ -31,14 +30,14 @@
   };
 </script>
 
-<section transition:slide={{ duration: 600 }}>
+<section {...$$restProps}>
   <header class="py-2">
     <div class="input-group" class:input-group-lg={$_settings.op1}>
       <input
         bind:value={newTask}
         type="text"
         class="form-control"
-        placeholder="add..."
+        placeholder="new Task"
       />
       <button
         on:click={() => addNewTodo()}

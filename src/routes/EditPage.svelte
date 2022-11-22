@@ -1,5 +1,5 @@
 <script>
-  import ProfilEdit from "./_comp/ProfilEdit.svelte";
+  import ProfileEdit from "./_comp/ProfileEdit.svelte";
   export let name = "Profil Editor";
 </script>
 
@@ -8,5 +8,5 @@
     {name}
   </h4>
   <hr />
-  <ProfilEdit />
+  <ProfileEdit />
 </div>

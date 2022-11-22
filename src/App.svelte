@@ -10,7 +10,6 @@
   import SettingsPage from "./routes/SettingsPage.svelte";
   import UserPage from "./routes/UserPage.svelte";
   import SignIn from "./lib/components/SignIn.svelte";
-  import EditPage from "./routes/EditPage.svelte";
   import Page from "./lib/components/Page.svelte";
   import { onMount } from "svelte";
   import SignUp from "./lib/components/SignUp.svelte";
@@ -65,17 +64,11 @@
         <UserPage />
       </Page>
     </Route>
-    <Route path="/edit">
-      <Page>
-        <EditPage />
-      </Page>
-    </Route>
     <Route path="/login" redirect="/" />
     <Route path="/signup" redirect="/" />
   {:else}
     <Route path="/data" redirect="/login" />
     <Route path="/user" redirect="/login" />
-    <Route path="/edit" redirect="/login" />
     <Route path="/settings" redirect="/login" />
     <Route path="/login">
       <Page center>
